@@ -18,8 +18,8 @@ public class Main {
         arr = new int[3][N+1];
         for(int i=1;i<=N;i++) {
             arr[0][i] = Math.max(arr[1][i-1], arr[2][i-1]);
-            arr[1][i] = Math.max(arr[0][i-1]+map[i], arr[1][i]);
-            arr[2][i] = Math.max(arr[1][i-1]+map[i], arr[2][i]);
+            arr[1][i] = arr[0][i-1]+map[i];
+            arr[2][i] = arr[1][i-1]+map[i];
         }
 
         System.out.println(Math.max(arr[1][N],arr[2][N]));
